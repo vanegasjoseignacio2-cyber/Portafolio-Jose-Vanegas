@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
+                url(../img/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+}
+canvas {
+  position: fixed;     /* cubre toda la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* deja pasar clicks */
+  z-index: 1000;        /* encima de todo, excepto del header*/
+}
+
+/* ==========================
+   HEADER
+========================== */
+.container-header{
+    background: linear-gradient(rgba(0, 0, 0, 0.855),rgba(30, 29, 29, 0.745),rgba(37, 36, 36, 0.619));
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;}
+
+.container-header header {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.container-header .logo a {
+    font-family: 'Righteous', cursive;
+    font-size: 36px;
+    color: #2600ff;
+    text-decoration: none;
+}
+
+.container-header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.container-header header nav ul li a{
+    text-align: center;
+    color: #fff;
+    margin: 0 15px;
+    padding: 3px;
+    transition: 0.5s;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.container-header header nav ul li a:hover{
+    color: #2600ff;
+    transform: scale(1.1);
+}
+
+/* ==========================
+   SECCIONES GENERALES
+========================== */
+section {
+    margin-top: 80px; 
+    flex: 1; 
+}
+
+/* ==========================
+   SKILLS
+========================== */
+.skills {
+    padding: 50px 20px;
+}
+
+.skills .container-section {
+    max-width: 1199px;
+    margin: auto;
+}
+
+.skills h2 {
+    font-size: 48px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.skills .fila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.skills .fila .col {
+    flex: 1;
+    min-width: 300px;
+    padding: 0 20px;
+}
+
+.skills .fila .col h3 {
+    font-size: 28px;
+    font-family: 'Righteous', cursive;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.skills span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Barra de progreso */
+.barra-skills {
+    height: 8px;
+    width: 80%;
+    background-color: #f0f3f7;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.progreso {
+    background-color: #2600ff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 8px;
+}
+
+.barra-skills span {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: #2600ff;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    top: -17px;
+    right: -15px;
+    font-size: 14px;
+}
+
+/* Animaciones específicas */
+.progreso.javascript { animation: javascript 2s forwards; }
+@keyframes javascript { from {width: 0;} to {width: 15%;} }
+
+.progreso.Html { animation: Html 2s forwards; }
+@keyframes Html { from {width: 0;} to {width: 40%;} }
+
+.progreso.Photoshop { animation: Photoshop 2s forwards; }
+@keyframes Photoshop { from {width: 0;} to {width: 50%;} }
+
+.progreso.Node { animation: Node 2s forwards; }
+@keyframes Node { from {width: 0;} to {width: 0%;} }
+
+.progreso.React { animation: React 2s forwards; }
+@keyframes React { from {width: 0;} to {width: 0%;} }
+
+.progreso.Comunicacion { animation: Comunicacion 2s forwards; }
+@keyframes Comunicacion { from {width: 0;} to {width: 85%;} }
+
+.progreso.trabajo { animation: trabajo 2s forwards; }
+@keyframes trabajo { from {width: 0;} to {width: 89%;} }
+
+.progreso.Creatividad { animation: Creatividad 2s forwards; }
+@keyframes Creatividad { from {width: 0;} to {width: 90%;} }
+
+.progreso.dedicacion { animation: dedicacion 2s forwards; }
+@keyframes dedicacion { from {width: 0;} to {width: 60%;} }
+
+.progreso.Project { animation: project 2s forwards; }
+@keyframes project { from {width: 0;} to {width: 5%;} }
+
+footer{
+    background: linear-gradient(40deg,
+    rgba(0, 0, 0, 0.293),rgb(0, 0, 0),rgba(0, 0, 0, 0.293),black,rgba(0, 0, 0, 0.293));
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+footer:before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                red,blue,deeppink,blue,
+                red,blue,deeppink,blue
+            );
+            background-size: 800%;
+            filter: blur(8px);
+            animation: glowing 20s linear infinite;
+        }
+        @keyframes glowing{
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 400%;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+footer .redes {
+    margin-bottom: 20px;
+}
+footer .redes a {
+    color: #fff;
+    display: inline-block;
+    border: 1px solid  #2600ff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 10px;
+    font-size: 20px;
+    transition: 0.3s;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+footer .redes a:hover{
+    background: #2600ff;
+    border-color: #2600ff;
+    transform: scale(1.2);}

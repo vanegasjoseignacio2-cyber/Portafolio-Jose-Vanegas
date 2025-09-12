@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../Workshop con css 28 agosto 2025"
+		},
+		{
+			"path": "../../Ejercicio con Jimmi"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "portafolio"
+	}
+}

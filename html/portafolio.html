@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bdc4e23805.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/portafolio.css">
+    <title>portafolio</title>
+</head>
+<body>
+    <div class="container-header">
+        <header>
+            <div class="logo">
+                <a href="#">Jose</a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./sobremi.html">Sobre mi</a></li>
+                    <li><a href="./skills.html">Skills</a></li>
+                    <li><a href="./curriculum.html">Curriculum</a></li>
+                    <li><a href="./portafolio.html">Portafolio</a></li>
+                    <li><a href="./contactenos.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- 🔽 Aquí empieza el contenido principal -->
+    <main>
+        <section id="portafolio" class="portafolio">
+            <h1>Portafolio</h1>
+            <div class="container">
+
+                <!-- Tarjeta 1 -->
+                <div class="ecard">
+                    <img src="../img/imagen para portafolio1.jpg" alt="Proyecto Eco-It">
+                    <div class="contenido">
+                        <h2>Proyecto Eco-It</h2>
+                        <p>Aún no se hace pero a futuro algo saldrá</p>
+                        <a href="#"><i class="fa-solid fa-recycle"></i> Eco-It</a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="ecard">
+                    <img src="../img/imagen 2 para portafolio.webp" alt="Aplicativo móvil">
+                    <div class="contenido">
+                        <h2>Aplicativo móvil</h2>
+                        <p>No sé de eso :(</p>
+                        <a href="#"><i class="fa-solid fa-face-smile"></i> :)</a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="ecard">
+                    <img src="../img/imagen para portafolio3.jpg" alt="Infraestructura del café">
+                    <div class="contenido">
+                        <h2>Infraestructura del café</h2>
+                        <p>Solo sé de café</p>
+                        <a href="#"><i class="fa-solid fa-mug-hot"></i> Cafecito</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="redes">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p>© 2025 Jose - Portafolio</p>
+    </footer>
+    <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let mouse = { x: 0, y: 0 };
+    let lastX = null, lastY = null;
+
+    document.addEventListener("mousemove", e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+function drawTrail() {
+  // Borrar con transparencia (no tapa el fondo con color)
+  ctx.globalCompositeOperation = "destination-out";
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; 
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Dibujar en modo normal encima
+  ctx.globalCompositeOperation = "lighter"; 
+
+  if (lastX !== null && lastY !== null) {
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(mouse.x, mouse.y);
+
+    ctx.strokeStyle = "#2600ff";
+    ctx.shadowColor = "#2600ff";
+    ctx.shadowBlur = 25;
+    ctx.lineWidth = 3;
+
+    ctx.stroke();
+  }
+
+  lastX = mouse.x;
+  lastY = mouse.y;
+}
+
+
+
+    function loop() {
+      drawTrail();
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>

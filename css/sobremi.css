@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
+                url(../img/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+canvas {
+  position: fixed;     /* cubre toda la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* deja pasar clicks */
+  z-index: 1000;        /* encima de todo, excepto del header*/
+}
+.container-header{
+    background: linear-gradient(rgba(0, 0, 0, 0.855),rgba(30, 29, 29, 0.745),rgba(37, 36, 36, 0.619));
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;}
+
+.container-header header {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.container-header header .logo a {
+    font-family: 'Righteous';
+    font-size: 36px;
+    color: #2600ff;
+    text-decoration: none;
+}
+
+.container-header header ul {
+    display: flex;
+    list-style: none;
+}
+.container-header header nav ul li a{
+    text-align: center;
+    color: #fff;
+    margin: 0 15px;
+    padding: 3px;
+    transition: 0.5s;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.container-header header nav ul li a:hover{
+    color: #2600ff;
+    transform: scale(1.1);
+}
+
+.sobremi {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.sobremi .container-section {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.sobremi h2 {
+    font-size: 48px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.sobremi .container-section p {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 20px;
+}
+
+.sobremi .container-section p span {
+    color: #2600ff;
+    font-weight: bold;
+}
+.sobremi .fila{
+    display: flex;
+}
+.sobremi .fila .col{
+    width: 50%;
+}
+.sobremi .fila .col h3{
+    font-size: 28px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 25px;
+}
+.sobremi .fila .col ul{
+    list-style: none;
+}
+.sobremi .fila .col ul li{
+    margin: 12px 0;
+}
+.sobremi .fila .col ul strong{
+    display: inline-block;
+    color: #2600ff;
+    width: 120px;
+    text-align: right;
+}
+.sobremi .fila .col .container-interes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+.sobremi .fila .col .container-interes .interes{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(171,165,165);
+    border-radius: 10px;
+    margin: 0 15px 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s all ease;
+}
+.sobremi .fila .col .container-interes .interes:hover{
+    background-color: #2600ff;
+    transform: scale(1.1);
+}
+footer{
+    background: linear-gradient(40deg,
+    rgba(0, 0, 0, 0.293),rgb(0, 0, 0),rgba(0, 0, 0, 0.293),black,rgba(0, 0, 0, 0.293));
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+footer:before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                red,blue,deeppink,blue,
+                red,blue,deeppink,blue
+            );
+            background-size: 800%;
+            filter: blur(8px);
+            animation: glowing 20s linear infinite;
+        }
+        @keyframes glowing{
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 400%;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+footer .redes {
+    margin-bottom: 20px;
+}
+footer .redes a {
+    color: #fff;
+    display: inline-block;
+    border: 1px solid  #2600ff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 10px;
+    font-size: 20px;
+    transition: 0.3s;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+footer .redes a:hover{
+    background: #2600ff;
+    border-color: #2600ff;
+    transform: scale(1.2);}
+

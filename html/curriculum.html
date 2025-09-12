@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      src="https://kit.fontawesome.com/bdc4e23805.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/curriculum.css">
+    <title>Portafolio</title>
+</head>
+<body>
+    <!-- Header -->
+    <div class="container-header">
+        <header>
+            <div class="logo">
+                <a href="#">Jose</a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./sobremi.html">Sobre mi</a></li>
+                    <li><a href="./skills.html">Skills</a></li>
+                    <li><a href="./curriculum.html">Curriculum</a></li>
+                    <li><a href="./portafolio.html">Portafolio</a></li>
+                    <li><a href="./contactenos.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- Sección Currículum -->
+    <section id="curriculum" class="curriculum"> 
+        <div class="container-section"> 
+            <h2>Currículum</h2> 
+            <div class="fila"> 
+                
+                <!-- Columna izquierda: Educación -->
+                <div class="col izquierda"> 
+                    <h3>Educación</h3>
+
+                    <div class="item izq"> 
+                        <h4>Análsis y desarrollo de software</h4> 
+                        <span class="casa">Sena</span> 
+                        <span class="fecha">2024 - 2026</span> 
+                        <p>Desarrollador web.</p> 
+                        <div class="conectori">
+                            <div class="circuloi"></div>
+                        </div> 
+                    </div>
+
+                    <div class="item izq"> 
+                        <h4>Bebidas a base de espresso</h4> 
+                        <span class="casa">Sena</span> 
+                        <span class="fecha">2024</span> 
+                        <p>Aprendiz de barismo.</p> 
+                        <div class="conectori"><div class="circuloi"></div></div> 
+                    </div>
+
+                    <div class="item izq"> 
+                        <h4>Cursos de inglés</h4> 
+                        <span class="casa">Sena</span> 
+                        <span class="fecha">2023</span> 
+                        <p>Inglés básico.</p> 
+                        <div class="conectori"><div class="circuloi"></div></div> 
+                    </div> 
+                </div> <!-- Cierre col izquierda -->
+
+                <!-- Columna derecha: Experiencia Laboral --> 
+                <div class="col derecha"> 
+                    <h3>Experiencia Laboral</h3> 
+
+                    <div class="item der"> 
+                        <h4>Atención al cliente </h4> 
+                        <span class="casa">Por ahí</span> 
+                        <span class="fecha">2021-Actualmente</span> 
+                        <p>Atención al cliente.</p> 
+                        <div class="conectord"><div class="circulod"></div></div> 
+                    </div> 
+
+                    <div class="item der"> 
+                        <h4>Copiar mal el código</h4> 
+                        <span class="casa">SENA</span> 
+                        <span class="fecha">2025</span> 
+                        <p>Especialista en copiar mal el código del Instructor.</p> 
+                        <div class="conectord"><div class="circulod"></div></div> 
+                    </div>
+
+                    <div class="item der"> 
+                        <h4>Comprar en la tienda</h4> 
+                        <span class="casa">SENA</span> 
+                        <span class="fecha">2025</span> 
+                        <p>Especialista en ir a comprar piña o avena.</p> 
+                        <div class="conectord"><div class="circulod"></div></div> 
+                    </div> 
+                </div> <!-- Cierre col derecha -->
+
+            </div> <!-- Cierre fila -->
+        </div> <!-- Cierre container-section -->
+    </section>
+    <footer>
+        <div class="redes">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p>© 2025 Jose - Portafolio</p>
+</footer> 
+ <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let mouse = { x: 0, y: 0 };
+    let lastX = null, lastY = null;
+
+    document.addEventListener("mousemove", e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+function drawTrail() {
+  // Borrar con transparencia (no tapa el fondo con color)
+  ctx.globalCompositeOperation = "destination-out";
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; 
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Dibujar en modo normal encima
+  ctx.globalCompositeOperation = "lighter"; 
+
+  if (lastX !== null && lastY !== null) {
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(mouse.x, mouse.y);
+
+    ctx.strokeStyle = "#2600ff";
+    ctx.shadowColor = "#2600ff";
+    ctx.shadowBlur = 25;
+    ctx.lineWidth = 3;
+
+    ctx.stroke();
+  }
+
+  lastX = mouse.x;
+  lastY = mouse.y;
+}
+
+
+
+    function loop() {
+      drawTrail();
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portafolio</title>
+    <link rel="stylesheet" href="../css/contactenos.css">
+    <script
+      src="https://kit.fontawesome.com/bdc4e23805.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+     <div class="container-header">
+        <header>
+            <div class="logo">
+                <a href="#">Jose</a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./sobremi.html">Sobre mi</a></li>
+                    <li><a href="./skills.html">Skills</a></li>
+                    <li><a href="./curriculum.html">Curriculum</a></li>
+                    <li><a href="./portafolio.html">Portafolio</a></li>
+                    <li><a href="./contactenos.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+
+    <h1>Contáctame</h1>
+    <p>Puedes escribirme a través del formulario o visitarme en mi ubicación</p>
+<div class="contacto-seccion">
+    
+    <!-- Bloque del formulario -->
+    <div class="formulario">
+        <form action="procesar" method="post">
+            <input type="text" placeholder="Escribe tu nombre aquí" id="nombre" name="nombre" required>
+            <input type="email" placeholder="Escribe tu correo aquí" id="correo" name="correo" required>
+            <textarea id="mensaje" placeholder="Escribe un mensaje" name="mensaje" rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Bloque del mapa -->
+    <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.877805629548!2d-75.6289667252733!3d2.19988219778065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e24d985e72b920f%3A0x47ae9b5b47ce6850!2sSENA%20-%20GARZON!5e0!3m2!1ses-419!2sco!4v1757626579949!5m2!1ses-419!2sco"
+                allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+</div>
+
+      <footer>
+        <div class="redes">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p>© 2025 Jose - Portafolio</p>
+</footer> 
+ <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let mouse = { x: 0, y: 0 };
+    let lastX = null, lastY = null;
+
+    document.addEventListener("mousemove", e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+function drawTrail() {
+  // Borrar con transparencia (no tapa el fondo con color)
+  ctx.globalCompositeOperation = "destination-out";
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; 
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Dibujar en modo normal encima
+  ctx.globalCompositeOperation = "lighter"; 
+
+  if (lastX !== null && lastY !== null) {
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(mouse.x, mouse.y);
+
+    ctx.strokeStyle = "#2600ff";
+    ctx.shadowColor = "#2600ff";
+    ctx.shadowBlur = 25;
+    ctx.lineWidth = 3;
+
+    ctx.stroke();
+  }
+
+  lastX = mouse.x;
+  lastY = mouse.y;
+}
+
+
+
+    function loop() {
+      drawTrail();
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>

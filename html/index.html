@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bdc4e23805.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Index</title>
+</head>
+<body>
+    <div class="container-header">
+        <header>
+            <div class="logo">
+                <a href="#">Jose</a>
+            </div>
+            <nav class="nav">
+        <ul>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./sobremi.html">Sobre mi</a></li>
+            <li><a href="./skills.html">Skills</a></li>
+            <li><a href="./curriculum.html">Curriculum</a></li>
+            <li><a href="./portafolio.html">Portafolio</a></li>
+            <li><a href="./contactenos.html">Contacto</a></li>
+        </ul>
+        </nav>
+        </header>
+    </div>
+    <section id="inicio" class="inicio">
+        <div class="container-banner">
+            <div class="container-img">
+                <img src="../img/Imagen para portafolio.png" alt="">
+            </div>
+            <h1> Jose Ignacio Vanegas Muñoz</h1>
+            <h2>Aprediz de desarrollo de software</h2>
+            <div class="redes">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <a href="#inicio" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        <div class="redes">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p>© 2025 Jose - Portafolio</p>
+    </footer>
+   <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let mouse = { x: 0, y: 0 };
+    let lastX = null, lastY = null;
+
+    document.addEventListener("mousemove", e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+function drawTrail() {
+  // Borrar con transparencia (no tapa el fondo con color)
+  ctx.globalCompositeOperation = "destination-out";
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; 
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Dibujar en modo normal encima
+  ctx.globalCompositeOperation = "lighter"; 
+
+  if (lastX !== null && lastY !== null) {
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(mouse.x, mouse.y);
+
+    ctx.strokeStyle = "#2600ff";
+    ctx.shadowColor = "#2600ff";
+    ctx.shadowBlur = 25;
+    ctx.lineWidth = 3;
+
+    ctx.stroke();
+  }
+
+  lastX = mouse.x;
+  lastY = mouse.y;
+}
+
+
+
+    function loop() {
+      drawTrail();
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>

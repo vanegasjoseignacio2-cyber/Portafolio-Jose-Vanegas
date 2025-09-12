@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/bdc4e23805.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/sobremi.css" />
+    <title>Portafolio</title>
+  </head>
+  <body>
+    <div class="container-header">
+      <header>
+        <div class="logo">
+          <a href="#">Jose</a>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./sobremi.html">Sobre mi</a></li>
+            <li><a href="./skills.html">Skills</a></li>
+            <li><a href="./curriculum.html">Curriculum</a></li>
+            <li><a href="./portafolio.html">Portafolio</a></li>
+            <li><a href="./contactenos.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <section id="sobremi" class="sobremi">
+      <div class="container-section"> 
+        
+        <h2>Sobre mi</h2>
+        <p>
+          <span>Hola, soy Jose Ignacio Vanegas Muñoz.</span> 
+          soy aprendiz en desarrollo web llevo 11 meses de formación en el sena
+        </p>
+
+        <div class="fila"> 
+
+          <div class="col"> 
+            <h3>Datos personales</h3>
+            <ul>
+              <li>
+                <strong>Cumpleaños</strong>
+                <span>11-02-2006</span>
+              </li>
+              <li>
+                <strong>Teléfono</strong>
+                <span>+57 3219899101</span>
+              </li>
+              <li>
+                <strong>Email</strong>
+                <span>vanegasjosseignacio2@gmail.com</span>
+              </li>
+              <li>
+                <strong>Dirección</strong>
+                <span>Garzón-Huila-Colombia</span>
+              </li>
+              <li>
+                <strong>Cargo</strong>
+                <span>Aprendiz sena</span>
+              </li>
+            </ul>
+          </div> 
+
+          <!-- Intereses -->
+          <div class="col"> 
+            <h3>Intereses</h3>
+            <div class="container-interes">
+              <div class="interes">
+                <i class="fa-solid fa-gamepad"></i>
+                <span>Juegos</span>
+              </div>
+              <div class="interes">
+                <i class="fa-solid fa-headphones"></i>
+                <span>Música</span>
+              </div>
+              <div class="interes">
+                <i class="fa-solid fa-film"></i>
+                <span>Películas</span>
+              </div>
+              <div class="interes">
+                <i class="fa-solid fa-book"></i>
+                <span>Libros</span>
+              </div>
+              <div class="interes">
+                <i class="fa-solid fa-camera"></i>
+                <span>Fotografía</span>
+              </div>
+              <div class="interes">
+                <i class="fa-solid fa-futbol"></i>
+                <span>Deporte</span>
+              </div>
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+    </section>
+    <footer>
+        <div class="redes">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p>© 2025 Jose - Portafolio</p>
+    </footer>
+     <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let mouse = { x: 0, y: 0 };
+    let lastX = null, lastY = null;
+
+    document.addEventListener("mousemove", e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+function drawTrail() {
+  // Borrar con transparencia (no tapa el fondo con color)
+  ctx.globalCompositeOperation = "destination-out";
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; 
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Dibujar en modo normal encima
+  ctx.globalCompositeOperation = "lighter"; 
+
+  if (lastX !== null && lastY !== null) {
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(mouse.x, mouse.y);
+
+    ctx.strokeStyle = "#2600ff";
+    ctx.shadowColor = "#2600ff";
+    ctx.shadowBlur = 25;
+    ctx.lineWidth = 3;
+
+    ctx.stroke();
+  }
+
+  lastX = mouse.x;
+  lastY = mouse.y;
+}
+
+
+
+    function loop() {
+      drawTrail();
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+  </body>
+</html>

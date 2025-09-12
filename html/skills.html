@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      src="https://kit.fontawesome.com/bdc4e23805.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/skills.css">
+    <title>portafolio</title>
+</head>
+<body>
+    <div class="container-header">
+      <header>
+        <div class="logo">
+          <a href="#">Jose</a>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./sobremi.html">Sobre mi</a></li>
+            <li><a href="./skills.html">Skills</a></li>
+            <li><a href="./curriculum.html">Curriculum</a></li>
+            <li><a href="./portafolio.html">Portafolio</a></li>
+            <li><a href="./contactenos.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+    <!--Menú de skills-->
+    <section id="skills" class="skills">
+    <div class="container-section"><!--apertura primer contenedor-->
+        <h2>Skills</h2>
+        <div class="fila">
+
+            <!-- Columna 1 -->
+            <div class="col">
+                <h3>Technical Skills</h3>
+                <div class="skills">
+                    <span>JavaScript</span>
+                    <div class="barra-skills">
+                        <div class="progreso javascript">
+                            <span>15%</span>
+                        </div>
+                    </div>
+
+                    <span>Html y CSS</span>
+                    <div class="barra-skills">
+                        <div class="progreso Html">
+                            <span>40%</span>
+                        </div>
+                    </div>
+
+                    <span>Photoshop</span>
+                    <div class="barra-skills">
+                        <div class="progreso Photoshop">
+                            <span>50%</span>
+                        </div>
+                    </div>
+
+                    <span>Node JS</span>
+                    <div class="barra-skills">
+                        <div class="progreso Node ">
+                            <span>0%</span>
+                        </div>
+                    </div>
+
+                    <span>React</span>
+                    <div class="barra-skills">
+                        <div class="progreso React">
+                            <span>0%</span>
+                        </div>
+                    </div>
+                </div><!-- cierra class skills -->
+            </div><!-- cierra primer col -->
+
+            <!-- Columna 2 -->
+            <div class="col">
+                <h3>Aprendiz Skills</h3>
+                <div class="skills">
+                    <span>Comunicación</span>
+                    <div class="barra-skills">
+                        <div class="progreso Comunicacion">
+                            <span>85%</span>
+                        </div>
+                    </div>
+
+                    <span>Trabajo en equipo</span>
+                    <div class="barra-skills">
+                        <div class="progreso trabajo">
+                            <span>89%</span>
+                        </div>
+                    </div>
+
+                    <span>Creatividad</span>
+                    <div class="barra-skills">
+                        <div class="progreso Creatividad">
+                            <span>90%</span>
+                        </div>
+                    </div>
+
+                    <span>Dedicación</span>
+                    <div class="barra-skills">
+                        <div class="progreso dedicacion">
+                            <span>60%</span>
+                        </div>
+                    </div>
+
+                    <span>Project Manager</span>
+                    <div class="barra-skills">
+                        <div class="progreso Project">
+                            <span>5%</span>
+                        </div>
+                    </div>
+                </div><!-- cierra class skills -->
+            </div><!-- cierra segundo col -->
+        </div><!-- cierra fila -->
+    </div><!--cierre de primer contenedor-->
+</section>
+<footer>
+        <div class="redes">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p>© 2025 Jose - Portafolio</p>
+</footer> 
+ <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let mouse = { x: 0, y: 0 };
+    let lastX = null, lastY = null;
+
+    document.addEventListener("mousemove", e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+function drawTrail() {
+  // Borrar con transparencia (no tapa el fondo con color)
+  ctx.globalCompositeOperation = "destination-out";
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; 
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Dibujar en modo normal encima
+  ctx.globalCompositeOperation = "lighter"; 
+
+  if (lastX !== null && lastY !== null) {
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(mouse.x, mouse.y);
+
+    ctx.strokeStyle = "#2600ff";
+    ctx.shadowColor = "#2600ff";
+    ctx.shadowBlur = 25;
+    ctx.lineWidth = 3;
+
+    ctx.stroke();
+  }
+
+  lastX = mouse.x;
+  lastY = mouse.y;
+}
+
+
+
+    function loop() {
+      drawTrail();
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
