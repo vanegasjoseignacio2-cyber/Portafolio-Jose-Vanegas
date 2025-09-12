@@ -74,7 +74,7 @@ canvas {
     color: #2600ff;
     transform: scale(1.1);
 }
-#menu-toggle{
+.menu-toggle{
     display: none;
 }
 .menu-icon{
@@ -85,6 +85,8 @@ canvas {
     margin-left: auto;
     border-radius: 20px;
 }
+/* Por defecto (pantalla grande) no se muestra */
+
 
 .sobremi {
     background-size: cover;
