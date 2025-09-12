@@ -74,6 +74,17 @@ canvas {
     color: #2600ff;
     transform: scale(1.1);
 }
+#menu-toggle{
+    display: none;
+}
+.menu_icon{
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    color: #2600ff;
+    margin-left: auto;
+    border-radius: 20px;
+}
 
 .sobremi {
     background-size: cover;
@@ -211,3 +222,8 @@ footer .redes a:hover{
     border-color: #2600ff;
     transform: scale(1.2);}
 
+@media (max-width: 768px){
+    #menu-toggle {
+        display: none;
+    }
+}
