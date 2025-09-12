@@ -74,11 +74,13 @@ canvas {
     color: #2600ff;
     transform: scale(1.1);
 }
-.menu-toggle{
+#menu-toggle{
     display: none;
 }
+/* Por defecto (pantalla grande) no se muestra */
+
 .menu-icon{
-    display: block;
+    display: none;
     font-size: 24px;
     cursor: pointer;
     color: #2600ff;
@@ -223,7 +225,6 @@ footer .redes a:hover{
     background: #2600ff;
     border-color: #2600ff;
     transform: scale(1.2);}
-
 
 @media (max-width: 768px){
     #menu-toggle {
