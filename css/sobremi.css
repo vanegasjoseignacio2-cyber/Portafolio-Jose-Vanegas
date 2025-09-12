@@ -222,11 +222,12 @@ footer .redes a:hover{
     border-color: #2600ff;
     transform: scale(1.2);}
 
+
 @media (max-width: 768px){
     #menu-toggle {
         display: none;
     }
-}
+
 .menu-icon{
     display: block;
     font-size: 28px;
@@ -264,4 +265,5 @@ footer .redes a:hover{
     padding: 10px 15px;
     display: block;
     text-align: left;
+}
 }
