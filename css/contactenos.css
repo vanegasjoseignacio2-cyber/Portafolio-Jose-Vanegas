@@ -98,13 +98,13 @@ h1{
 p{
     text-align: center;
     margin-top: 10px;
-    color: rgba(142, 140, 140, 0.911);
+    color: rgba(128, 128, 128, 0.911);
 }
 
 .formulario {
     flex: 1;
     max-width: 400px;
-    margin-top: 1000px 50px 80px 80px ;
+    margin-top: 40px;
     height: 55vh;
 }
 
