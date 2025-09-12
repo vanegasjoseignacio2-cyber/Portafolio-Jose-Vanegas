@@ -77,7 +77,7 @@ canvas {
 #menu-toggle{
     display: none;
 }
-.menu_icon{
+.menu-icon{
     display: block;
     font-size: 24px;
     cursor: pointer;
@@ -226,4 +226,42 @@ footer .redes a:hover{
     #menu-toggle {
         display: none;
     }
+}
+.menu-icon{
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #2600ff;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 300;
+}
+.container-header header .nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 10px 0;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    z-index: 250;
+}
+
+/* Mostrar menú al activar */
+#menu-toggle:checked ~ .nav ul {
+    display: flex;
+}
+
+.container-header header .nav ul li {
+    margin: 5px 0;
+}
+.container-header header .nav ul li a {
+    color: #fff;
+    padding: 10px 15px;
+    display: block;
+    text-align: left;
 }
