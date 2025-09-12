@@ -190,6 +190,8 @@ section{
     position: relative;
     bottom: 4px;
 }
+p{
+    text-align: right;}
 footer{
     background: linear-gradient(40deg,
     rgba(0, 0, 0, 0.293),rgb(0, 0, 0),rgba(0, 0, 0, 0.293),black,rgba(0, 0, 0, 0.293));
