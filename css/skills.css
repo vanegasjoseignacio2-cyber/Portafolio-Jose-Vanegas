@@ -81,6 +81,21 @@ canvas {
     color: #2600ff;
     transform: scale(1.1);
 }
+#menu-toggle{
+    display: none;
+}
+/* Por defecto (pantalla grande) no se muestra */
+
+.menu-icon{
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #2600ff;
+    margin-left: auto;
+    border-radius: 19px;
+}
+/* Por defecto (pantalla grande) no se muestra */
+
 
 /* ==========================
    SECCIONES GENERALES
@@ -254,3 +269,100 @@ footer .redes a:hover{
     background: #2600ff;
     border-color: #2600ff;
     transform: scale(1.2);}
+
+@media (max-width: 768px){
+    #menu-toggle{
+        display: none;
+    }
+    
+    .menu-icon{
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        color:#2600ff;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 300;
+    }
+
+    .container-header header .nav ul{
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0,0,0,0.5);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        padding: 10px 0;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        z-index: 250;
+    }
+
+    #menu-toggle:checked ~ .nav ul{
+        display: flex;
+    }
+
+    .container-header header .nav ul li{
+        margin: 5px 0;
+    }
+
+    .container-header header .nav ul li a{
+        color: white;
+        padding: 10px 15px;
+        display: block;
+        text-align: left;
+    }
+
+}
+
+@media screen and (max-width: 768) {
+    .container-header header{
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-header header ul{
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+    }
+    .container-header header nav ul li{
+        margin: 10px 0;
+    }
+    .skills{
+        padding: 40px 15px;
+    }
+    .skills h2{
+        font-size: 36px;
+    }
+    .skills .fila{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .skills .fila .col{
+        padding: 0;
+        min-width: 100;
+    }
+    .skills .fila .col h3{
+        font-size: 24px;
+    }
+    .skills .skills .barra-skills{
+        width: 100%;
+    }
+    .skills .skills .barra-skills span{
+        font-size: 12px;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        top: -15px;
+        right: -12px;
+    }
+    footer .redes a{
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 18px;
+        margin: 8px;
+    }
+}

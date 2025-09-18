@@ -228,7 +228,7 @@ footer .redes a:hover{
 
 @media (max-width: 768px){
     .container-header header {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
     }
     .container-header header ul {
@@ -258,7 +258,7 @@ footer .redes a:hover{
     }
     .sobremi .fila .col ul strong {
         width: auto;
-        text-align: center;
+        text-align: left;
     }
     .sobremi .fila .col .container-interes {
         justify-content: center;
@@ -308,7 +308,7 @@ footer .redes a:hover{
 }
 
 .container-header header .nav ul li {
-    margin: 5px 0;
+    margin:5px 0;
     text-align: center;
 }
 .container-header header .nav ul li a {
