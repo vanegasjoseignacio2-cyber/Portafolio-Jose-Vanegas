@@ -271,22 +271,18 @@ footer .redes a:hover{
     transform: scale(1.2);}
 
 @media (max-width: 768px){
-    #menu-toggle{
-        display: none;
-    }
-    
     .menu-icon{
         display: block;
         font-size: 28px;
         cursor: pointer;
-        color:#2600ff;
+        color: #2600ff;
         position: absolute;
         right: 20px;
         top: 20px;
         z-index: 300;
     }
 
-    .container-header header .nav ul{
+    .container-header header nav ul{
         display: none;
         flex-direction: column;
         background-color: rgba(0,0,0,0.5);
@@ -300,24 +296,23 @@ footer .redes a:hover{
         z-index: 250;
     }
 
-    #menu-toggle:checked ~ .nav ul{
+    #menu-toggle:checked ~ nav ul{
         display: flex;
     }
 
-    .container-header header .nav ul li{
+    .container-header header nav ul li{
         margin: 5px 0;
     }
 
-    .container-header header .nav ul li a{
-        color: white;
+    .container-header header nav ul li a{
+        color: #ffffff;
         padding: 10px 15px;
         display: block;
         text-align: left;
     }
-
 }
 
-@media screen and (max-width: 768) {
+@media screen and (max-width: 768px) {
     .container-header header{
         flex-direction: column;
         align-items: center;
@@ -348,7 +343,7 @@ footer .redes a:hover{
         font-size: 24px;
     }
     .skills .skills .barra-skills{
-        width: 100%;
+        width: 90%;
     }
     .skills .skills .barra-skills span{
         font-size: 12px;
@@ -359,10 +354,9 @@ footer .redes a:hover{
         right: -12px;
     }
     footer .redes a{
-        width: 35px;
-        height: 35px;
+        width: 36px;
+        height: 36px;
         line-height: 36px;
         font-size: 18px;
-        margin: 8px;
-    }
+        margin:8px;}
 }

@@ -301,12 +301,44 @@ footer .redes a:hover{
 }
 
 .container-header header .nav ul li {
-    margin: 5px 0;
+    margin:5px 0;
 }
 .container-header header .nav ul li a {
     color: #fff;
     padding: 10px 15px;
     display: block;
-    text-align: left;
+    text-align: left;
 }
+.curriculum {
+    display:flex;
+    margin-top: 20px;
+}
+.curriculum h2{
+    font-size: 30px;
+    text-align: center;
+}
+.curriculum .fila .col h3{
+    font-size: 24px;
+    text-align: center;
+}
+.curriculum .fila .item{
+    align-items: center;
+}
+.curriculum .fila .item h4{
+    font-size: 14px;
+    text-align: center;
+
+}
+.curriculum .fila .item .casa{
+    font-size: 18px;
+    text-align: center;
+}
+
+ footer .redes a{
+        width: 35px;
+        height: 100%;
+        line-height: 36px;
+        font-size: 18px;
+        margin: 8px;
+    }
 }
