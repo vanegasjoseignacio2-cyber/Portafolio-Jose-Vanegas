@@ -231,13 +231,13 @@ footer .redes a:hover{
         flex-direction: column;
         align-items: center;
     }
-    container-header header ul {
+    .container-header header ul {
         flex-direction: column;
         width: 100%;
         padding: 10px 0;
         text-align: center;
     }
-    ontainer-header header ul li {
+    .container-header header ul li {
         margin: 10px 0;
     }
     .sobremi {
@@ -250,7 +250,7 @@ footer .redes a:hover{
         flex-direction: column;
     }
     .sobremi .fila .col {
-        width: 100px;
+        width: 100%;
         margin-bottom: 30px;
     }
     .sobremi .fila .col h3 {
@@ -258,7 +258,7 @@ footer .redes a:hover{
     }
     .sobremi .fila .col ul strong {
         width: auto;
-        text-align: left;
+        text-align: center;
     }
     .sobremi .fila .col .container-interes {
         justify-content: center;
@@ -309,12 +309,13 @@ footer .redes a:hover{
 
 .container-header header .nav ul li {
     margin: 5px 0;
+    text-align: center;
 }
 .container-header header .nav ul li a {
     color: #fff;
     padding: 10px 15px;
     display: block;
-    text-align: left;
+    text-align: center;
 }
 }
 @media (max-width: 480px) {
