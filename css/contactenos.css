@@ -77,14 +77,9 @@ canvas {
     transition: all 0.3s ease;
     display: inline-block;
 }
-.container-header header nav ul li a:hover{
-    color: #2600ff;
-    transform: scale(1.1);
-}
 #menu-toggle{
     display: none;
 }
-/* Por defecto (pantalla grande) no se muestra */
 
 .menu-icon{
     display: none;
@@ -222,12 +217,38 @@ footer .redes a:hover{
     border-color: #2600ff;
     transform: scale(1.2);}
 
-    @media (max-width: 768px){
-    #menu-toggle {
-        display: none;
-    }
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 1024px) {
+  .contacto-seccion {
+    gap: 20px;
+    padding: 15px;
+  }
 
-.menu-icon{
+  .formulario {
+    max-width: 100%;
+  }
+
+  .formulario input,
+  .formulario textarea,
+  .formulario button {
+    width: 100%;
+  }
+
+  .mapa {
+    max-width: 100%;
+  }
+
+  .mapa iframe {
+    width: 100%;
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* ===== HEADER ===== */
+  .menu-icon {
     display: block;
     font-size: 28px;
     cursor: pointer;
@@ -236,33 +257,106 @@ footer .redes a:hover{
     right: 20px;
     top: 20px;
     z-index: 300;
-}
-.container-header header .nav ul {
+  }
+
+  .container-header header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .container-header header .nav ul {
     display: none;
     flex-direction: column;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.85);
     position: absolute;
-    top: 60px;
+    top: 70px;
     right: 20px;
-    width: 200px;
+    width: 220px;
     padding: 10px 0;
     border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     z-index: 250;
-}
+  }
 
-/* Mostrar menú al activar */
-#menu-toggle:checked ~ .nav ul {
+  /* Mostrar menú al activar */
+  #menu-toggle:checked ~ nav ul {
     display: flex;
-}
+  }
 
-.container-header header .nav ul li {
-    margin:5px 0;
-}
-.container-header header .nav ul li a {
+  .container-header header .nav ul li {
+    margin: 5px 0;
+  }
+
+  .container-header header .nav ul li a {
     color: #fff;
     padding: 10px 15px;
     display: block;
     text-align: left;
+  }
+
+  /* ===== FORM Y MAPA ===== */
+  .contacto-seccion {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .formulario {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .formulario input,
+  .formulario textarea,
+  .formulario button {
+    width: 100%;
+  }
+
+  .mapa {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .mapa iframe {
+    width: 100%;
+    height: 250px;
+  }
+
+  /* ===== TEXTOS ===== */
+  h1 {
+    font-size: 28px;
+    margin-top: 90px;
+  }
+
+  p {
+    font-size: 16px;
+    padding: 0 15px;
+  }
 }
-    }
+
+@media (max-width: 480px) {
+  .container-header .logo a {
+    font-size: 28px;
+  }
+
+  .menu-icon {
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .formulario textarea {
+    height: 120px;
+  }
+
+  footer .redes a {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 18px;
+    margin: 5px;
+  }
+}
