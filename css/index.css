@@ -314,6 +314,7 @@ footer .arriba{
     .inicio .container-banner{
         max-width: 90%;
         padding: 15px;
+        display: block;
     }
     .inicio .container-banner h1 {
         font-size: 28px;
@@ -328,6 +329,7 @@ footer .arriba{
     }
     footer .redes a{
         margin: 10px;
+        gap: 5px;
     }
 }
 
